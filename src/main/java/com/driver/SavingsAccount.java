@@ -23,7 +23,7 @@ public class SavingsAccount extends BankAccount{
         else if(amount > balance ){
             throw new InsufficientBalanceException("Insufficient Balance");
         }
-        super.setBalance(balance - amount);
+        super.withdraw(amount);
 
     }
 

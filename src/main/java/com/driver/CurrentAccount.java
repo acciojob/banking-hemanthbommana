@@ -17,7 +17,7 @@ public class CurrentAccount extends BankAccount{
         
 
     }
-    public boolean  isvalidLicenseId (String tradeLicenseId) {
+    public boolean  isvalidLicenseId(String tradeLicenseId) {
       
         for(int i =1;i<tradeLicenseId.length();i++){
             if(tradeLicenseId.charAt(i-1) == tradeLicenseId.charAt(i)){
@@ -32,10 +32,11 @@ public class CurrentAccount extends BankAccount{
         // If the license Id is valid, do nothing
         // If the characters of the license Id can be rearranged to create any valid license Id
         // If it is not possible, throw "Valid License can not be generated" Exception
-        boolean flag = isvalidLicenseId(tradeLicenseId);
-        if(flag){
-            return ;
+        
+        if (isvalidLicenseId(tradeLicenseId)){
+            return;
         }
+
         String rearranged = rearrangeLicense(tradeLicenseId);
         if (rearranged.equals("Not possible")) {
             throw new InsufficientBalanceException("Valid License can not be generated");
@@ -46,7 +47,7 @@ public class CurrentAccount extends BankAccount{
      }
     public String rearrangeLicense(String str) {
         
-       int n = str.length();
+       //int n = str.length();
         Map<Character, Integer> freqMap = new HashMap<>();
 
         for (char c : str.toCharArray()) {
